@@ -27,9 +27,3 @@ class WechatAPI(object):
         self.access_token = ret.get("access_token", None)
         self.last_get_access_token_time = now_time
         return self.access_token
-
-if __name__ == '__main__':
-    wechat_api = WechatAPI("wx0dc050170ff565ac", "38b45d10bb7942c7656bebb4c4e70dd9", "zhuzekun")
-    print wechat_api.get_access_token()
-    print wechat_api.get_access_token()
-
