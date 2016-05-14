@@ -24,12 +24,14 @@ define("port", default=80, help="run on the given port", type=int)
 define("ip", default="0.0.0.0", help="server_ip", type=str)
 
 class WechatHandler(tornado.web.RequestHandler):
+    # 具体需求你们可以继承 WechatHandler 这个类
     def initialize(self, wechat_api):
         self.wechat_api = wechat_api
 
     def get(self):
         self.check_wechat_server()
 
+    # 直接返回用户的文本消息
     def post(self):
         xml_str = self.request.body
         text_msg = TextMessage()
